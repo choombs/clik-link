@@ -3,24 +3,24 @@
 // Function to handle button click events
 function selectOption(option) {
     if (option === 'yes') {
-        // Flash rainbow colors, then display GIF and link
+        // Flash rainbow colors, then display the GIF and link
         flashRainbowColors(function() {
-            document.getElementById('question').style.display = 'none'; // Hide question
-            displayCatHeart(); // Show dancing cat
+            document.getElementById('question').style.display = 'none'; // Hide the question
+            displayCatHeart(); // Show the dancing cat GIF
             createRedirectLink(); // Show the link after the image
         });
     } else if (option === 'no') {
         // Change text on the "No" button to "You sure?"
-        document.getElementById('no-button').innerText = 'You sure?'; 
+        document.getElementById('no-button').innerText = 'You sure?';
         // Increase font size of "Yes" button
         var yesButton = document.getElementById('yes-button');
         var currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
-        var newSize = parseFloat(currentFontSize) * 2; // Increase font size
+        var newSize = parseFloat(currentFontSize) * 2;
         yesButton.style.fontSize = newSize + 'px';
     }
 }
 
-// Function to flash rainbow colors and then execute a callback function
+// Function to flash rainbow colors and execute a callback function
 function flashRainbowColors(callback) {
     var colors = ['#ff0000', '#ff7f00', '#ffff00', '#00ff00', '#0000ff', '#4b0082', '#9400d3'];
     var i = 0;
@@ -42,19 +42,19 @@ function displayCat() {
     var imageContainer = document.getElementById('image-container');
     imageContainer.innerHTML = '';
     var catImage = new Image();
-    catImage.src = 'sad-cat-uwu-sad-cat.gif'; // Make sure this file exists
-    catImage.alt = 'Sad Cat Uwu';
+    catImage.src = 'cat.gif'; // Make sure this file exists
+    catImage.alt = 'Sad Cat';
     catImage.onload = function() {
         imageContainer.appendChild(catImage);
     };
 }
 
-// Function to display the dancing cat GIF and show the redirect link
+// Function to display the dancing cat GIF
 function displayCatHeart() {
     document.getElementById('image-container').innerHTML = ''; // Clear existing content
     var imageContainer = document.getElementById('image-container');
     var catHeartImage = new Image();
-    catHeartImage.src = 'cat.gif'; // Ensure this file exists
+    catHeartImage.src = 'cat-heart.gif'; // Make sure this file exists
     catHeartImage.alt = 'Dancing Cat';
     catHeartImage.onload = function() {
         imageContainer.appendChild(catHeartImage);
